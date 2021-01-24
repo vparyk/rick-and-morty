@@ -1,13 +1,12 @@
 <section class="character-list" *ngIf="isLoaded">
     <p>character-list works!</p>
 
-    <!-- todo add to the listed characters -->
-    <button routerLink="/character/1">Character navigation Test</button>
-
     <!-- todo format characters -->
-    <article *ngFor="let character of characters">
-        <h2>{{character.name}}</h2>
-        <p>{{character.status}}</p>
-        <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
+    <article *ngFor="let character of characters" >
+        <a [routerLink]="['/character/', character.id]">
+            <h2>{{character.name}}</h2>
+            <p>{{character.status}}</p>
+            <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
+        </a>
     </article>
 </section>
