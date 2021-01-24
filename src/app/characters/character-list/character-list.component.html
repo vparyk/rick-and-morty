@@ -7,5 +7,8 @@
     <!-- todo format characters -->
     <article *ngFor="let character of characters">
         <h2>{{character.name}}</h2>
+        <p>{{character.status}}</p>
+        <p>{{character.location.name}}</p>
+        <p>{{character.created | date}}</p>
     </article>
 </section>

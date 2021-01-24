@@ -2,7 +2,12 @@
     <p>character-details works!</p>
     
     <article>
+        <img [attr.src]="character.image">
         <h2>Character name: {{character.name}}</h2>
+
+        <p>{{character.status}}</p>
+        <p>{{character.location.name}}</p>
+        <p>{{character.created | date}}</p>
     </article>
 
 </section>
