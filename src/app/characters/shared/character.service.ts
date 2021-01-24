@@ -17,4 +17,9 @@ export class CharacterService {
   getCharacters(): Observable<any>{
     return this.http.get(this.baseApiUrl+'/character')
   }
+
+  getCharacter(id:number): Observable<Character>{
+    return this.http.get<Character>(this.baseApiUrl+'/character/'+id)
+  }
+
 }
