@@ -3,11 +3,10 @@
     
     <article>
         <img [attr.src]="character.image">
-        <h2>Character name: {{character.name}}</h2>
-
+        <h2>{{character.name}}</h2>
         <p>{{character.status}}</p>
-        <p>{{character.location.name}}</p>
-        <p>{{character.created | date}}</p>
+        <p>Last known location: {{character.location.name}}</p>
+        <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
     </article>
 
 </section>

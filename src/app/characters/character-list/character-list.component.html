@@ -8,7 +8,6 @@
     <article *ngFor="let character of characters">
         <h2>{{character.name}}</h2>
         <p>{{character.status}}</p>
-        <p>{{character.location.name}}</p>
-        <p>{{character.created | date}}</p>
+        <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
     </article>
 </section>
