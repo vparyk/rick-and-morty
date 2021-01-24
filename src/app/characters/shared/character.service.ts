@@ -8,7 +8,7 @@ import { Character } from './character.model';
   providedIn: 'root'
 })
 export class CharacterService {
-  //todo refactor to be accessible in the whole libery
+  //todo refactor to be accessible in the whole library
   baseApiUrl="https://rickandmortyapi.com/api"
 
   constructor(private http: HttpClient) { }
