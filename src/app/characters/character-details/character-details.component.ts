@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from '../shared/character.model';
 import { CharacterService } from '../shared/character.service';
+import {Location} from '@angular/common';
 
 @Component({
   selector: 'app-character-details',
@@ -17,7 +18,8 @@ export class CharacterDetailsComponent implements OnInit {
 
   constructor(
     private characterService: CharacterService,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private _location: Location
     ) { }
 
   ngOnInit(): void {
@@ -30,6 +32,10 @@ export class CharacterDetailsComponent implements OnInit {
         })
       }
   })
+  }
+
+  navigateBack(){
+    this._location.back();
   }
 
 }

@@ -1,5 +1,10 @@
 <section class=character-details *ngIf="isLoaded">
     <p>character-details works!</p>
+
+    <a (click)="navigateBack()" 
+        class="navigate-back"
+        >Back
+    </a>
     
     <article>
         <img [attr.src]="character.image">
