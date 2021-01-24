@@ -10,12 +10,14 @@ import { CharacterService } from '../shared/character.service';
 export class CharacterListComponent implements OnInit {
 
   characters:Character[]= [];
+  isLoaded:boolean=false;
 
   constructor(private characterService: CharacterService) { }
 
   ngOnInit(): void {
     this.characterService.getCharacters().subscribe(data =>{
       this.characters=<Array<Character>>data.results;
+      this.isLoaded=true;
     })
   }
 
