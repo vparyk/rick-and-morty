@@ -1,9 +1,11 @@
-<p>character-list works!</p>
+<section class=character-list>
+    <p>character-list works!</p>
 
-<!-- todo add to the listed characters -->
-<button routerLink="/character/1">Character navigation Test</button>
+    <!-- todo add to the listed characters -->
+    <button routerLink="/character/1">Character navigation Test</button>
 
-<!-- todo format characters -->
-<div *ngFor="let character of characters">
-    {{character.name}}
-</div>
+    <!-- todo format characters -->
+    <article *ngFor="let character of characters">
+        <h2>{{character.name}}</h2>
+    </article>
+</section>
