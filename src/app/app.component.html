@@ -2,10 +2,16 @@
   <nav>
     <ul>
       <li>
-        <button routerLink="">Home</button>
+        <a routerLink="" 
+        routerLinkActive="active-link" 
+        [routerLinkActiveOptions]="{exact: true}"
+        >Home</a>
       </li>
       <li>
-        <button routerLink="/characters">Characters</button>
+        <a routerLink="/characters" 
+        routerLinkActive="active-link" 
+        [routerLinkActiveOptions]="{exact: true}"
+        >Characters</a>
       </li>
     </ul>
   </nav>
