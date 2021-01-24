@@ -1,4 +1,9 @@
 <p>character-list works!</p>
 
-<!-- todo add to the listed charachters -->
+<!-- todo add to the listed characters -->
 <button routerLink="/character/1">Character navigation Test</button>
+
+<!-- todo format characters -->
+<div *ngFor="let character of characters">
+    {{character.name}}
+</div>
