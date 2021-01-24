@@ -1,5 +1,9 @@
-// Todo find out how to handle arrays and objects in model interface. (replace any)
-// Todo decide should i use interface or class for Angular modals
+// todo refactor loctation inferface to separete file, where you can access it anywhere in the library.
+
+export interface Location{
+    name:string,
+}
+
 export interface Character {
     id?:number;
     name:string;
@@ -8,7 +12,7 @@ export interface Character {
     type:string;
     gender:string;
     origin:any;
-    location:any;
+    location:{[key: string]: Location};
     image:string;
     episode:any;
     url:string;
