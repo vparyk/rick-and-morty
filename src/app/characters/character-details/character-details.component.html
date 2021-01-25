@@ -7,11 +7,19 @@
     </a>
     
     <article>
-        <img [attr.src]="character.image">
-        <h2>{{character.name}}</h2>
-        <p>{{character.status}}</p>
-        <p>Last known location: {{character.location.name}}</p>
-        <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
+        <div class="inner-box">
+            <div class="left-box">
+                <img [attr.src]="character.image">
+            </div>
+            <div class="right-box">
+                <h2>{{character.name}}</h2>
+                <p>{{character.status}}</p>
+                <p class="label">Last known location: </p>
+                <p>{{character.location.name}}</p>
+                <p class="label">Created date:</p>
+                <p>({{character.created | date: 'YYYY-MM-dd'}})</p>
+            </div>
+        </div>
     </article>
 
 </section>
