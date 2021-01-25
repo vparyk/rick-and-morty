@@ -11,26 +11,35 @@ export class CharacterListComponent implements OnInit {
 
   characters:Character[]= [];
   isLoaded:boolean=false;
+  nextPageLoading:boolean=false;
   nameQuery:string='';
   statusQuery:string='';
+  nextUrl:string='';
 
   constructor(private characterService: CharacterService) { }
 
+  private setInfo(data:any):void{
+    this.characters=<Array<Character>>data.results;
+    this.nextUrl=<string>data.info.next;
+    this.nextPageLoading=false;
+  }
+
   private fetchCharacters():void{
-    this.characterService.getCharacters().subscribe(data =>{
-      this.characters=<Array<Character>>data.results;
-      this.isLoaded=true;
+      this.nextPageLoading=true;
+      this.characterService.getCharacters().subscribe(data =>{
+      this.setInfo(data);
     })
   }
 
   ngOnInit(): void {
     this.fetchCharacters();
+    this.isLoaded=true;
   }
 
   private fetchCharactersByQuery():void{
+    this.nextPageLoading=true;
     this.characterService.getCharactersByQuery('?name='+this.nameQuery+'&status='+this.statusQuery).subscribe(data =>{
-      this.characters=<Array<Character>>data.results;
-      this.isLoaded=true;
+      this.setInfo(data);
     })
   }
 
@@ -42,6 +51,16 @@ export class CharacterListComponent implements OnInit {
   onStatusFilterChange(newValue:string):void{
     this.statusQuery=newValue;
     this.fetchCharactersByQuery();
+  }
+
+  onScroll():void{
+    if(!this.nextUrl){
+      return;
+    }
+    this.nextPageLoading=true;
+    this.characterService.getNextCharacters(this.nextUrl).subscribe(data =>{
+      this.setInfo(data);
+    });
   }
 
 }

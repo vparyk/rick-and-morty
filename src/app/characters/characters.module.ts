@@ -10,6 +10,7 @@ import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
 import { SearchFormComponent } from './search-form/search-form.component';
 import { CharacterDetailsResolver } from './character-details.resolver';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 
 
@@ -23,7 +24,8 @@ import { CharacterDetailsResolver } from './character-details.resolver';
     ReactiveFormsModule,
     MatInputModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    InfiniteScrollModule
   ],
   providers:[CharacterDetailsResolver],
   exports:[

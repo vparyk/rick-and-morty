@@ -13,7 +13,7 @@ export class CharacterService {
 
   constructor(private http: HttpClient) { }
 
-  // todo handle pagination
+
   getCharacters(): Observable<any>{
     return this.http.get(this.baseApiUrl+'/character')
   } 
@@ -24,6 +24,10 @@ export class CharacterService {
 
   getCharacter(id:number): Observable<Character>{
     return this.http.get<Character>(this.baseApiUrl+'/character/'+id)
+  }
+
+  getNextCharacters(url:string=''): Observable<any>{
+    return this.http.get(url)
   }
 
 }
