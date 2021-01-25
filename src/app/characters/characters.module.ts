@@ -9,6 +9,7 @@ import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
 import { SearchFormComponent } from './search-form/search-form.component';
+import { CharacterDetailsResolver } from './character-details.resolver';
 
 
 
@@ -24,6 +25,7 @@ import { SearchFormComponent } from './search-form/search-form.component';
     MatSelectModule,
     MatButtonModule
   ],
+  providers:[CharacterDetailsResolver],
   exports:[
     CharacterListComponent,
   ]
