@@ -9,7 +9,8 @@
     <article>
         <div class="inner-box">
             <div class="left-box">
-                <img [attr.src]="character.image">
+                <img [attr.src]="character.image" 
+                     [attr.alt]="character.name">
             </div>
             <div class="right-box">
                 <h2>{{character.name}}</h2>
