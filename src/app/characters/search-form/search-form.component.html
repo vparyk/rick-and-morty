@@ -1,0 +1,17 @@
+<section>
+    <form [formGroup]="myForm">
+
+        <mat-form-field>
+            <input matInput placeholder="Search characters by name"
+                    formControlName="name">
+        </mat-form-field>
+
+        <mat-form-field>
+            <mat-select formControlName="status" placeholder="Filter by status">
+                <!-- todo replace hardcoded select options -->
+                <mat-option value="Dead">Dead</mat-option>
+                <mat-option value="Alive">Alive</mat-option>
+            </mat-select>
+        </mat-form-field>
+    </form>
+</section>
