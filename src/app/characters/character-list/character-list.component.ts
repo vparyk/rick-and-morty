@@ -19,9 +19,13 @@ export class CharacterListComponent implements OnInit {
   constructor(private characterService: CharacterService) { }
 
   private setInfo(data:any):void{
-    this.characters=<Array<Character>>data.results;
-    this.nextUrl=<string>data.info.next;
-    this.nextPageLoading=false;
+    // make a bit slower, to see loading button for proper user reaction
+    setTimeout(()=>{
+      this.characters=<Array<Character>>data.results;
+      this.nextUrl=<string>data.info.next;
+      this.nextPageLoading=false;
+    }, 500)
+  
   }
 
   private fetchCharacters():void{

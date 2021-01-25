@@ -20,12 +20,15 @@
 <div class="search-results" 
      infiniteScroll
      [infiniteScrollDistance]="2"
-     [infiniteScrollThrottle]="1000"
+     [infiniteScrollThrottle]="150"
      (scrolled)="onScroll()"
 >
 
 </div>
 
-<div *ngIf="nextPageLoading">Loading</div>
+<div *ngIf="nextPageLoading || !isLoaded" 
+    class="loading-icon"
+    >
+</div>
 
 <div *ngIf="!nextUrl">End of the content.</div>
