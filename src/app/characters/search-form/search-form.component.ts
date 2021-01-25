@@ -10,6 +10,8 @@ export class SearchFormComponent implements OnInit {
   @Output() public searchNameChanged= new EventEmitter();
   @Output() public statusFilterChanged= new EventEmitter();
 
+  // todo change to GraphQL to query hardcoded types(rest api doesn't provide status types) 
+  public readonly statusTypes:string[]=['Alive', 'Dead', 'unknown'];
   myForm:FormGroup=<FormGroup>{};
 
   constructor(private fb:FormBuilder) { }
@@ -24,13 +26,13 @@ export class SearchFormComponent implements OnInit {
       // fix Angular strict mode 'Object is possibly 'null'.' error
         const variable = this.myForm.get('name');
         variable!.valueChanges.subscribe(data => {
-          this.searchNameChanged.emit('name')
+          this.searchNameChanged.emit(data)
         });
     }
     if(this.myForm && this.myForm.get('status')){
         const variable = this.myForm.get('status');
         variable!.valueChanges.subscribe(data => {
-          this.statusFilterChanged.emit('status')
+          this.statusFilterChanged.emit(data)
         });
     }
   }

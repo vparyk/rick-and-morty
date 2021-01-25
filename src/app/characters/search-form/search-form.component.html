@@ -8,9 +8,7 @@
 
         <mat-form-field>
             <mat-select formControlName="status" placeholder="Filter by status">
-                <!-- todo replace hardcoded select options -->
-                <mat-option value="Dead">Dead</mat-option>
-                <mat-option value="Alive">Alive</mat-option>
+                <mat-option *ngFor="let type of statusTypes;" value="{{type}}">{{type}}</mat-option>
             </mat-select>
         </mat-form-field>
     </form>
