@@ -12,14 +12,12 @@ export class CharacterDetailsComponent implements OnInit {
 
   // todo angular is set to strict, and want me to initialize variables. "character:Character" throw an error. todo find better solution
   character:Character=<Character>{};
-  isLoaded:boolean=false;
 
   constructor(
     private _route:ActivatedRoute,
     private _location: Location
     ) {
       this.character=this._route.snapshot.data['characterDetails'];
-      this.isLoaded=true;
      }
 
   ngOnInit(): void {
