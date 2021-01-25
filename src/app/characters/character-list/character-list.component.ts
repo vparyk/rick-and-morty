@@ -20,9 +20,9 @@ export class CharacterListComponent implements OnInit {
 
   private setInfo(data:any):void{
     // make a bit slower, to see loading button for proper user reaction
+    this.nextUrl=<string>data.info.next;
     setTimeout(()=>{
       this.characters=<Array<Character>>data.results;
-      this.nextUrl=<string>data.info.next;
       this.nextPageLoading=false;
     }, 500)
   
@@ -58,7 +58,7 @@ export class CharacterListComponent implements OnInit {
   }
 
   onScroll():void{
-    if(!this.nextUrl){
+    if(!this.nextUrl || this.nextPageLoading){
       return;
     }
     this.nextPageLoading=true;
