@@ -1,16 +1,22 @@
 <section class="character-list" *ngIf="isLoaded">
-    <p>character-list works!</p>
 
-    <app-search-form (searchNameChanged)="onSearchNameChange($event)"
-                    (statusFilterChanged)="onStatusFilterChange($event)"
-    ></app-search-form>
+    <section class="search-form">
+        <app-search-form (searchNameChanged)="onSearchNameChange($event)"
+                        (statusFilterChanged)="onStatusFilterChange($event)"
+                        class="w-100"
+        ></app-search-form>
+    </section>
 
     <!-- todo format characters -->
-    <article *ngFor="let character of characters" >
+    <article *ngFor="let character of characters" 
+              class="character">
         <a [routerLink]="['/character/', character.id]">
             <h2>{{character.name}}</h2>
-            <p>{{character.status}}</p>
-            <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
+            <div class="inner-box">
+                <p>{{character.status}}</p>
+                <p>Created date: ({{character.created | date: 'YYYY-MM-dd'}})</p>
+            </div>
+        
         </a>
     </article>
 </section>

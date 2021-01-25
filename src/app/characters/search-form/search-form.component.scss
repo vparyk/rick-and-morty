@@ -1,0 +1,12 @@
+
+.search-form-box{
+    background: white;
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom:60px;
+    @media screen and (max-width: 600px) {
+        flex-direction: column;
+        padding:20px;
+      }
+}
+
