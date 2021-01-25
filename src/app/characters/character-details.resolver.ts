@@ -17,7 +17,6 @@ export class CharacterDetailsResolver implements Resolve<Character> {
 
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Character> {
-    // todo change hardcode
     return this._characterService.getCharacter(parseInt(route.params.id)).pipe(map( (data:any) => {
       if (data.status==="Alive") {
           return data;

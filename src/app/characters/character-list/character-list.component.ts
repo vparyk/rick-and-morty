@@ -34,21 +34,14 @@ export class CharacterListComponent implements OnInit {
     })
   }
 
-  // todo implement filter by name and status
   onSearchNameChange(newValue:string):void{
-    // if(newValue===''){
-    //   this.fetchCharacters();
-    //   return;
-    // }
     this.nameQuery=newValue;
     this.fetchCharactersByQuery();
-    console.log("search name changed"+newValue);
   }
 
   onStatusFilterChange(newValue:string):void{
     this.statusQuery=newValue;
     this.fetchCharactersByQuery();
-    console.log("status filter changed"+newValue);
   }
 
 }

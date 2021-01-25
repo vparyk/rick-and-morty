@@ -20,7 +20,6 @@ export class CharacterDetailsComponent implements OnInit {
     ) {
       this.character=this._route.snapshot.data['characterDetails'];
       this.isLoaded=true;
-      console.log("components loaded")
      }
 
   ngOnInit(): void {
