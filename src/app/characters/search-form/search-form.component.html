@@ -7,7 +7,8 @@
         </mat-form-field>
 
         <mat-form-field>
-            <mat-select formControlName="status" placeholder="Filter by status">
+            <mat-select formControlName="status">
+                <mat-option value="">Filter by status</mat-option>
                 <mat-option *ngFor="let type of statusTypes;" value="{{type}}">{{type}}</mat-option>
             </mat-select>
         </mat-form-field>

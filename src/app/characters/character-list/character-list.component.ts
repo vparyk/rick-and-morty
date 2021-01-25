@@ -11,21 +11,43 @@ export class CharacterListComponent implements OnInit {
 
   characters:Character[]= [];
   isLoaded:boolean=false;
+  nameQuery:string='';
+  statusQuery:string='';
 
   constructor(private characterService: CharacterService) { }
 
-  ngOnInit(): void {
+  private fetchCharacters():void{
     this.characterService.getCharacters().subscribe(data =>{
       this.characters=<Array<Character>>data.results;
       this.isLoaded=true;
     })
   }
+
+  ngOnInit(): void {
+    this.fetchCharacters();
+  }
+
+  private fetchCharactersByQuery():void{
+    this.characterService.getCharactersByQuery('?name='+this.nameQuery+'&status='+this.statusQuery).subscribe(data =>{
+      this.characters=<Array<Character>>data.results;
+      this.isLoaded=true;
+    })
+  }
+
   // todo implement filter by name and status
-  onSearchNameChange(newValue:string){
+  onSearchNameChange(newValue:string):void{
+    // if(newValue===''){
+    //   this.fetchCharacters();
+    //   return;
+    // }
+    this.nameQuery=newValue;
+    this.fetchCharactersByQuery();
     console.log("search name changed"+newValue);
   }
 
-  onStatusFilterChange(newValue:string){
+  onStatusFilterChange(newValue:string):void{
+    this.statusQuery=newValue;
+    this.fetchCharactersByQuery();
     console.log("status filter changed"+newValue);
   }
 

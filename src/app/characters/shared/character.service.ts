@@ -16,6 +16,10 @@ export class CharacterService {
   // todo handle pagination
   getCharacters(): Observable<any>{
     return this.http.get(this.baseApiUrl+'/character')
+  } 
+
+  getCharactersByQuery(query:string): Observable<any>{
+    return this.http.get(this.baseApiUrl+'/character'+query)
   }
 
   getCharacter(id:number): Observable<Character>{
