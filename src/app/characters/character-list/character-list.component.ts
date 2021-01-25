@@ -20,5 +20,13 @@ export class CharacterListComponent implements OnInit {
       this.isLoaded=true;
     })
   }
+  // todo implement filter by name and status
+  onSearchNameChange(newValue:string){
+    console.log("search name changed"+newValue);
+  }
+
+  onStatusFilterChange(newValue:string){
+    console.log("status filter changed"+newValue);
+  }
 
 }
