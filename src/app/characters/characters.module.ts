@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input'
 import { MatSelectModule } from '@angular/material/select'
 import { MatButtonModule } from '@angular/material/button'
+import { MatDialogModule } from '@angular/material/dialog'
 import { SearchFormComponent } from './search-form/search-form.component';
 import { CharacterDetailsResolver } from './character-details.resolver';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
@@ -25,6 +26,7 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatInputModule,
     MatSelectModule,
     MatButtonModule,
+    MatDialogModule,
     InfiniteScrollModule
   ],
   providers:[CharacterDetailsResolver],

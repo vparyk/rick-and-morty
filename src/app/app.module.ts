@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { CharactersModule } from './characters/characters.module';
 import { HomeComponent } from './home/home.component';
 import { MatButtonModule } from '@angular/material/button'
+import { MatDialogModule } from '@angular/material/dialog'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DialogComponent } from './dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
     CharactersModule,
     AppRoutingModule,
     MatButtonModule,
+    MatDialogModule,
     BrowserAnimationsModule
   ],
   providers: [],

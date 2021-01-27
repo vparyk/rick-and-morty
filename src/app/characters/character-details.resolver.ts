@@ -8,12 +8,14 @@ import { Observable, of } from 'rxjs';
 import { Character } from './shared/character.model';
 import { CharacterService } from './shared/character.service';
 import { map } from 'rxjs/operators';
+import { MatDialog } from '@angular/material/dialog';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CharacterDetailsResolver implements Resolve<Character> {
-  constructor(private router:Router, private _characterService: CharacterService){
+  constructor(private router:Router, private _characterService: CharacterService, private dialog: MatDialog ){
 
   }
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<Character> {
@@ -22,8 +24,7 @@ export class CharacterDetailsResolver implements Resolve<Character> {
           return data;
       } else {
           this.router.navigate(['/characters']);
-          alert("Character status is 'unknown' or 'dead'!")
-          return null
+          this.dialog.open(DialogComponent, {data:{title:"Interdimensional Error!", body:"Character status is 'unknown' or 'dead'!", confirmText:'What a pity!'}} )
       }
   }));
   }
