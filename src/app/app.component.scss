@@ -5,6 +5,9 @@ header{
         li{
             padding:10px;
             list-style-type: none;
+            .active-link{
+                // todo find proper styling for active link
+            }
         }
     }
 }
